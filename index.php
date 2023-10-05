@@ -1,3 +1,18 @@
+<?php
+
+include './generatore.php';
+
+
+
+if(!empty($_GET['lunghezza_password'])){
+    session_start();
+    $_SESSION['lunghezza_password'] = randomPass($lunghezzaPassword);
+    header('Location: ./password.php');
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,14 +35,14 @@
                 <h3>Dicci chi sei</h3>
             </div>
             <div class="son1 text-center">
-            <form action="password.php" method="POST">
+            <form action="password.php" method="GET">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" name="nome" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Cognome</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" name="cognome" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Lunghezza di caratteri della tua password</label>
