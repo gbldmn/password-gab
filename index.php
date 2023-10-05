@@ -17,15 +17,25 @@
         <div class="item1 d-flex flex-column">
             <div class="son text-center">
                 <h3>Vuoi una password sicura?</h3>
-                <h3>compila il form!</h3>
+                <h3>Dicci chi sei</h3>
             </div>
             <div class="son1 text-center">
-                <form action="">
-                    <label for="">Nome</label>
-                    <input type="text"><br>
-                    <label for="">cognome</label>
-                    <input type="text">
-                </form>
+            <form action="password.php" method="POST">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Cognome</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Lunghezza di caratteri della tua password</label>
+                    <input type="number" min="2" max="10" name="lunghezza_password" class="form-control" id="exampleInputPassword1">
+                    <div id="emailHelp" class="form-text">Per noi la sicurezza va prima di tutto</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Genera</button>
+            </form>
             </div>
         </div>
     </div>
