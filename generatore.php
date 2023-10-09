@@ -13,6 +13,3 @@ function randomPass($lunghezzaPassword){
     }
     return $password;
 }
-// var_dump(randomPass($lunghezzaPassword));
-$risultatoFinale = randomPass($lunghezzaPassword);
-// var_dump($risultatoFinale);

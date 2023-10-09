@@ -2,14 +2,21 @@
 
 include './generatore.php';
 
-
-
 if(!empty($_GET['lunghezza_password'])){
     session_start();
     $_SESSION['lunghezza_password'] = randomPass($lunghezzaPassword);
     header('Location: ./password.php');
 }
-
+if(!empty($_GET['nome'])){
+    session_start();
+    $_SESSION['nome'] = $_GET['nome'];
+    header('Location: ./password.php');
+}
+if(!empty($_GET['cognome'])){
+    session_start();
+    $_SESSION['cognome'] = $_GET['cognome'];
+    header('Location: ./password.php');
+}
 ?>
 
 
@@ -21,6 +28,43 @@ if(!empty($_GET['lunghezza_password'])){
     <link rel="stylesheet" href="file.css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>Document</title>
+    <style>
+           body {
+            background-image: linear-gradient(to bottom, #ff0000, #00ff00);
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            background-color: white;
+            border: 1px solid white;
+            border-radius: 20px;
+            padding: 4px;
+        }
+        .item {
+            border: 1px solid white;
+            border-radius: 20px;
+            padding: 4px;
+        }
+        .item1 {
+            border: 1px solid white;
+            border-radius: 20px;
+            padding: 4px;
+        }
+        .son {
+            border: 1px solid white;
+            border-radius: 20px;
+            padding: 4px;
+        }
+        .son1 {
+            border: 1px solid white;
+            border-radius: 20px;
+            padding: 4px;
+        }
+    </style>
 </head>
 <body>
     <div class="box d-flex flex-column ">
@@ -35,7 +79,7 @@ if(!empty($_GET['lunghezza_password'])){
                 <h3>Dicci chi sei</h3>
             </div>
             <div class="son1 text-center">
-            <form action="password.php" method="GET">
+            <form action="index.php" method="GET">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Nome</label>
                     <input type="text" class="form-control" name="nome" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -47,9 +91,9 @@ if(!empty($_GET['lunghezza_password'])){
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Lunghezza di caratteri della tua password</label>
                     <input type="number" min="2" max="10" name="lunghezza_password" class="form-control" id="exampleInputPassword1">
-                    <div id="emailHelp" class="form-text">Per noi la sicurezza va prima di tutto</div>
+                    <div id="emailHelp" class="form-text">Per noi la sicurezza viene prima di tutto</div>
                 </div>
-                <button type="submit" class="btn btn-primary">Genera</button>
+                <button type="submit" class="btn btn-danger">Genera</button>
             </form>
             </div>
         </div>
